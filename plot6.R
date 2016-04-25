@@ -1,3 +1,10 @@
+## plot5.R, by Adam J Heller, 2016.04.24
+## 
+## Problem Statement: Compare emissions from motor vehicle sources in Baltimore
+## City with emissions from motor vehicle sources in Los Angeles County,
+## California (fips == "06037"). Which city has seen greater changes over time
+## in motor vehicle emissions?
+
 library(dplyr)
 library(ggplot2)
 

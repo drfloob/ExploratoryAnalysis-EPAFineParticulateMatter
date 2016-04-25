@@ -1,3 +1,8 @@
+## plot5.R, by Adam J Heller, 2016.04.24
+## 
+## Problem Statement: How have emissions from motor vehicle sources changed from
+## 1999–2008 in Baltimore City?
+
 library(dplyr)
 library(ggplot2)
 

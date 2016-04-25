@@ -1,3 +1,9 @@
+## plot2.R, by Adam J Heller, 2016.04.24
+## 
+## Problem Statement: Have total emissions from PM2.5 decreased in the Baltimore
+## City, Maryland (fips == "24510") from 1999 to 2008? Use the base plotting
+## system to make a plot answering this question.
+
 library(dplyr)
 
 zipFile <- "pm25-data.zip"

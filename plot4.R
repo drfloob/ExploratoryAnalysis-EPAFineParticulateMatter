@@ -1,3 +1,8 @@
+## plot4.R, by Adam J Heller, 2016.04.24
+## 
+## Problem Statement: Across the United States, how have emissions from coal
+## combustion-related sources changed from 1999–2008?
+
 library(dplyr)
 library(ggplot2)
 
@@ -20,7 +25,7 @@ png(file="plot4.png", bg="white")
 par(mar=c(5,5,3,2))
 with(coalData, {
     plot(year, total, type="p", pch=21,
-         main="Coal Combustion Emissions, PM2.5, 1999-2008",
+         main="US Coal Combustion Emissions, PM2.5, 1999-2008",
          ylab = "Total Emissions (tons of PM2.5)")
     abline(lm(total ~ year), lwd=2, col="blue")
     legend("bottomleft", col="blue", lwd=2, legend = c("decreasing"))
