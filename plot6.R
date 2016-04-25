@@ -1,4 +1,4 @@
-## plot5.R, by Adam J Heller, 2016.04.24
+## plot6.R, by Adam J Heller, 2016.04.24
 ## 
 ## Problem Statement: Compare emissions from motor vehicle sources in Baltimore
 ## City with emissions from motor vehicle sources in Los Angeles County,
@@ -44,13 +44,12 @@ laNEI <- filter(laNEI, SCC %in% laVehicSCC$SCC)
 # this is beyond the scope of this project. If we are lucky, city reporting has 
 # been self-consistent over time, which means the trend lines will still be 
 # going in the right direction, but they'll be exaggerated/scaled in the case of
-# double counting. Baltimore City's data doesn't have "Total" observations, but 
-# LA does, so only LA would be exaggerated. Comparing the slopes of their 
-# trends, as this question asks us to do, will probably be misleading.
+# double counting. Comparing the slopes of their trends, as this question asks
+# us to do, will probably be misleading.
 # 
 # Eliminating "total" lines in an attempt to correct for this unfortunately 
 # wiped out all Baltimore data for 1999 and 2008. Wiping out non-Total entries 
-# would likely fail to count some valid emissions. This project requires a lot
+# would likely fail to count some valid emissions. This project requires a lot 
 # of in-depth research to do well.
 
 baltNEI$city <- "Baltimore City, MD"
