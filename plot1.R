@@ -8,7 +8,6 @@ if (!file.exists(zipFile)) {
 }
 
 NEI <- readRDS("summarySCC_PM25.rds")
-SCC <- readRDS("Source_Classification_Code.rds")
 
 yearGrpNEI <- NEI %>% group_by(year) %>% summarize(total=sum(Emissions))
 
@@ -19,5 +18,6 @@ with(yearGrpNEI, {
          main="Total US Emissions of PM2.5, 1999-2008",
          ylab = "Total Emissions (tons of PM2.5)")
     abline(lm(total ~ year), lwd=2, col="blue")
+    legend(2005, 7e+06, col="blue", lwd=2, legend = c("decreasing"))
 })
 dev.off()
