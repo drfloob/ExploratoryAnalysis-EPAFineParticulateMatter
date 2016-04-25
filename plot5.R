@@ -16,9 +16,12 @@ vehicSCC <- filter(SCC, SCC %in% unique(baltNEI$SCC))
 vehicSCC <- vehicSCC[grep("vehic", vehicSCC$Short.Name, ignore.case = T),]$SCC
 baltNEI <- filter(baltNEI, SCC %in% vehicSCC)
 
-# NOTE: SCC includes parent categories like "All Road Types" that would 
-# duplicate data counting in sums. Thankfully, Baltimore doesn't have any of
-# these SCCs in the NEI data.
+# NOTE: SCC includes summary categories like "Urban Local: Total" that duplicate
+# data in categories like "Urban Local: Brake Wear". The trouble is we can't 
+# just eliminate totals or individual entries since some years only have total, 
+# and others only have entries. If at least the city is self-consistent with how
+# and when they include "Total" entries, the trend lines will be in the right
+# direction, but skewed/exaggerated.
 
 baltNEI <- baltNEI %>% group_by(year) %>% summarize(total=sum(Emissions))
 
