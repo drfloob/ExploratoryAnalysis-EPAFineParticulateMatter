@@ -18,7 +18,7 @@ your plot.
 
 ## Files
 
-`plot[1-6].R` generate the `plot[1-6].png` result files, relying on `etl.R` to download and read in the required data.
+`plot[1-6].R` download and read in the required data, then generate the `plot[1-6].png` result files.
 
 
 ## Notes
