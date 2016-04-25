@@ -8,7 +8,6 @@ if (!file.exists(zipFile)) {
 }
 
 NEI <- readRDS("summarySCC_PM25.rds")
-SCC <- readRDS("Source_Classification_Code.rds")
 
 baltNEI <- NEI %>% filter(fips=="24510") %>% group_by(year) %>% summarize(total=sum(Emissions))
 
@@ -19,5 +18,6 @@ with(baltNEI, {
          main="Total Baltimore City, MD Emissions of PM2.5, 1999-2008",
          ylab = "Total Emissions (tons of PM2.5)")
     abline(lm(total ~ year), lwd=2, col="blue")
+    legend(2005.3, 3320, col="blue", lwd=2, legend = c("decreasing"))
 })
 dev.off()
